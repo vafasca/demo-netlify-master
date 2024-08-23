@@ -1,0 +1,24 @@
+<h2>Los primeros 30 Pokémons</h2>
+<p>¡Atrápalos todos!</p>
+<br />
+<br />
+<div fxLayout="row wrap" fxLayoutGap="10px">
+  <div
+    fxLayout="column"
+    *ngFor="let pokemon of pokemons; let i = index"
+    style="padding-bottom: 10px !important"
+  >
+    <mat-card style="width: calc(25vh)">
+      <mat-card-header>
+        <mat-card-title>{{ pokemon.name }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <img
+          mat-card-image
+          src="{{ pokemonImageUrl + (i + 1).toString() + '.png' }}"
+          alt="{{ pokemon.name }}"
+        />
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
